@@ -1,10 +1,14 @@
-// store all the messages
+var Messages = {
 
-var Messages = function() {
-	debugger;
-	for (var i = 0; i < results.length; i++) {
-		_.extend(results[i], MessageView);
-
-	}
 
 };
+
+
+// var Messages = function() {
+// 	debugger;
+// 	for (var i = 0; i < results.length; i++) {
+// 		_.extend(results[i], MessageView);
+
+// 	}
+
+// };
