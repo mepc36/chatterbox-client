@@ -1,6 +1,3 @@
 // Store all the rooms
 
-var Rooms = {
-
-
-};
+var Rooms = {};

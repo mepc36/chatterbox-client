@@ -21,8 +21,7 @@ var App = {
     Parse.readAll((data) => {
       // examine the response from the server request:
       //  console.log(data);
-  
-       MessagesView.storage = data.results
+      incomingMessages = data.results;
 
       callback();
     });
@@ -38,3 +37,5 @@ var App = {
     FormView.setStatus(false);
   }
 };
+
+var incomingMessages;

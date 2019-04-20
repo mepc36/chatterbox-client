@@ -6,27 +6,28 @@ var MessagesView = {
     setInterval(MessagesView.render,50)
   },
   
-  currentUser : 'hi',
+  currentUser : '',
 
   render: function() {
     // MessagesView.$chats = $('<div id="chats"></div>')
     
     App.fetch();
-
     
     if(MessagesView.objectID){
-      for (var i = 0; MessagesView.storage[i].objectId !== MessagesView.objectID; i++) {
+      for (var i = 0; incomingMessages[i].objectId !== MessagesView.objectID; i++) {
+          
           var newMessages = $('<div></div>');
-          newMessages.append(MessageView(MessagesView.storage[i]))
+          newMessages.append(MessageView(incomingMessages[i]))
         }
       MessagesView.$chats.prepend(newMessages)
     } else {
       for (var i = 0; i < 20; i++) {
-        console.log(MessagesView.storage[i].username);
-          MessagesView.$chats.append(MessageView(MessagesView.storage[i]));
+        if(incomingMessages[i].username && incomingMessages[i].username.startsWith(MessagesView.currentUser)){
+          MessagesView.$chats.append(MessageView(incomingMessages[i]));
+        }
       }
     }
-    MessagesView.objectID = MessagesView.storage[0].objectId
+    MessagesView.objectID = incomingMessages[0].objectId
     }
 };
 
