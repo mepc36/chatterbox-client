@@ -1,14 +1,5 @@
-var Messages = {
-
-
-};
-
-
-// var Messages = function() {
-// 	debugger;
-// 	for (var i = 0; i < results.length; i++) {
-// 		_.extend(results[i], MessageView);
-
-// 	}
-
-// };
+var Message = function(text){
+    this.text = text;
+    this.username = App.username || 'anonymous'
+    this.roomname = 'lobby'
+}

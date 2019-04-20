@@ -20,8 +20,8 @@ var App = {
   fetch: function(callback = ()=>{}) {
     Parse.readAll((data) => {
       // examine the response from the server request:
-       console.log(data);
-       debugger;
+      //  console.log(data);
+  
        MessagesView.storage = data.results
 
       callback();
@@ -38,7 +38,3 @@ var App = {
     FormView.setStatus(false);
   }
 };
-
-$( ".refresh" ).on( "click", function() {
-  MessagesView.initialize();
-});

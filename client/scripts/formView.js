@@ -14,8 +14,10 @@ var FormView = {
 
     // This is the message that comes from the text input box;
     var messageText = document.getElementsByName('message')[0].value;
+    
+    var messagePackage = new Message(messageText);
 
-    Parse.create(messageText, null, null);
+    Parse.create(messagePackage, MessagesView.render(), null);
     // console.log('click!');
   },
 

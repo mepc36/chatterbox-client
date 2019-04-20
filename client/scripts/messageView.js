@@ -16,12 +16,19 @@ var MessageView = function(msg) {
   //   `)
 
     var chat = $('<div class="chat"></div>');
-    var user = $('<div class="username"></div>');
+    var user = $(`<div class="username" data-name="${msg.username}"></div>`);
+    user.text(msg.username)
+    user.click(function(){ 
+      MessagesView.currentUser = msg.username;
+      MessagesView.objectID = undefined;
+    })
     var chatter = $('<div class="text"></div>');
-    $('.text').text(msg.text)
-    $('.username').text(msg.username)
-
+    chatter.text(msg.text)
     chat.append(user);
     chat.append(chatter);
     return chat;
+
+    
+    
 };
+
